@@ -107,11 +107,13 @@ const SideBar = () => {
         <Box height="66%" overflowY="Auto" paddingY="20px">
           <List spacing={2}>
             {playList.map((list) => (
-              <LinkBox>
-                <Link href="/">
-                  <LinkOverlay>{playList}</LinkOverlay>
-                </Link>
-              </LinkBox>
+              <ListItem fontSize="16px" key={Math.random()}>
+                <LinkBox>
+                  <Link href="/">
+                    <LinkOverlay marginX="20px">{list}</LinkOverlay>
+                  </Link>
+                </LinkBox>
+              </ListItem>
             ))}
           </List>
         </Box>
