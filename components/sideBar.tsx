@@ -17,7 +17,6 @@ import {
   MdFavorite,
 } from "react-icons/md";
 import Image from "next/image";
-import { generateKey } from "crypto";
 
 const navMenu = [
   {
