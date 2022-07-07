@@ -4,15 +4,15 @@ import cookie from 'cookie'
 import { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '../../lib/prisma'
 
-
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { email, password } = req.body
+
   const user = await prisma.user.findUnique({
     where: {
-        email,
+      email,
     },
   })
- 
+
   if (user && bcrypt.compareSync(password, user.password)) {
     const token = jwt.sign(
       {

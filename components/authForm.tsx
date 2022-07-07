@@ -39,7 +39,7 @@ const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
             <Input
               type="password"
               placeholder="password"
-              onChnage={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <Button
               type="submit"
