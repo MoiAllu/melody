@@ -16,11 +16,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       data : {
         email,
         password: bcrypt.hashSync(password, salt),
+        firstname :"Ali",
+        lastname:"Abbasi"
       },
     })
   } catch (e) {
     res.status(401)
-    res.json({ error: 'User already exists' })
+    res.json({ error: 'User already exists' ,e})
     return
   }
 
@@ -44,6 +46,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       secure: process.env.NODE_ENV === 'production',
     })
   )
-
   res.json(user)
 }

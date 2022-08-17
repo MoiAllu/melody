@@ -103,7 +103,7 @@ const SideBar = () => {
           </List>
         </Box>
         <Divider marginY="15px" color="gray.800" />
-        <Box height="66%" overflowY="Auto" paddingY="20px">
+        <Box height="66%" overflowY="auto" paddingY="20px">
           <List spacing={2}>
             {playList.map((list) => (
               <ListItem fontSize="16px" key={Math.random()}>
