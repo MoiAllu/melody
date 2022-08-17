@@ -4,11 +4,11 @@ import prisma from './prisma'
 
 export const validateRoute = (handler) => {
   return async (req: NextApiRequest, res: NextApiResponse) => {
-    const token = req.cookies.MELODY_ACESS_TOKEN
-
+    const token = req.cookies.ACCESS_KEY
+    console.log(token);
     if (token) {
       let user
-
+      console.log(token)
       try {
         const { id } = jwt.verify(token, 'hello')
         user = await prisma.user.findUnique({
@@ -33,6 +33,6 @@ export const validateRoute = (handler) => {
 }
 
 export const validateToken = (token) => {
-  const user = jwt.verify(token, 'hello')
+  const user = jwt.verify(token, process.env.JWT_SECRET)
   return user
 }

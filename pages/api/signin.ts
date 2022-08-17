@@ -20,15 +20,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         email: user.email,
         time: Date.now(),
       },
-      'hello',
+      process.env.JWT_SECRET,
       {
         expiresIn: '8h',
       }
     )
-
     res.setHeader(
       'Set-Cookie',
-      cookie.serialize('MELODY_ACESS_TOKEN', token, {
+      cookie.serialize(process.env.ACCESS_KEY, token, {
         httpOnly: true,
         maxAge: 8 * 60 * 60,
         path: '/',
