@@ -17,6 +17,7 @@ import {
   MdFavorite,
 } from "react-icons/md";
 import Image from "next/image";
+import { usePlaylist } from "../lib/hooks";
 
 const navMenu = [
   {
@@ -47,8 +48,9 @@ const musicMenu = [
     route: "/",
   },
 ];
-const playList = new Array(30).fill(1).map((_, i) => `Playlist ${i + 1} `);
+// const playList = new Array(30).fill(1).map((_, i) => `Playlist ${i + 1} `);
 const SideBar = () => {
+  const { playlist } = usePlaylist();
   return (
     <Box
       width="100%"
@@ -57,7 +59,6 @@ const SideBar = () => {
       color="gray"
       paddingX="5px"
     >
-      trax
       <Box paddingY="5px" height="100%">
         <Box width="120px" marginBottom="20px" paddingX="5px">
           <Image src="/logo.svg" width={120} height={60} />
@@ -105,11 +106,17 @@ const SideBar = () => {
         <Divider marginY="15px" color="gray.800" />
         <Box height="66%" overflowY="auto" paddingY="20px">
           <List spacing={2}>
-            {playList.map((list) => (
-              <ListItem fontSize="16px" key={Math.random()}>
+            {playlist.map((playlist) => (
+              <ListItem paddingX="20px" key={playlist.id}>
                 <LinkBox>
-                  <Link href="/">
-                    <LinkOverlay marginX="20px">{list}</LinkOverlay>
+                  <Link
+                    href={{
+                      pathname: "/playlist/[id]",
+                      query: { id: playlist.id },
+                    }}
+                    passHref
+                  >
+                    <LinkOverlay>{playlist.name}</LinkOverlay>
                   </Link>
                 </LinkBox>
               </ListItem>

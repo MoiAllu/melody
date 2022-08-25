@@ -7,7 +7,7 @@ export default function middleware(req) {
   if (signedinPages.find((p) => p === req.nextUrl.pathname)) {
     const token = req.cookies.get("MELODY_ACCESS_KEY")
     // const token ="123"
-    console.log(token); 
+    // console.log(token); 
     if (!token) {
       const url = req.nextUrl.clone()
       url.pathname = '/signin'

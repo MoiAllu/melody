@@ -12,7 +12,7 @@ export const useMe=()=>{
 export const usePlaylist=()=>{
    const {data,error} = useSWR("/playlist",fecher);
    return{
-        playlist:data || [],
+        playlist:(data as any) || [],
         isLoading: !data && error,
         isError: error
    }
