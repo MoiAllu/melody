@@ -55,6 +55,7 @@ const Player = ({ songs, activeSong }) => {
 
   useEffect(() => {
     setActiveSong(songs[index]);
+    console.log("song Changes");
   }, [index, setActiveSong, songs]);
 
   useEffect(() => {
