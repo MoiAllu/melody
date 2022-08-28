@@ -28,7 +28,10 @@ const Home = ({ artists }) => {
           {json.map((artist) => (
             <Box paddingX="10px" width="20%" key={artist.id}>
               <Box bg="gray.900" borderRadius="4px" padding="15px" width="100%">
-                <Image src="/profile.jpg" borderRadius="100%" />
+                <Image
+                  src={`https://picsum.photos/400?random=${artist.id}`}
+                  borderRadius="100%"
+                />
                 <Box marginTop="20px">
                   <Text fontSize="large">{artist.name}</Text>
                   <Text fontSize="x-small">Artist</Text>
