@@ -22,6 +22,7 @@ const GradientLayout = ({
             boxSize="160px"
             boxShadow="2xl"
             src={image}
+            alt="Profile Picture"
             borderRadius={roundImage ? "100%" : "3px"}
           />
         </Box>

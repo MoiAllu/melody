@@ -15,7 +15,7 @@ const Home = ({ artists }) => {
       title={`${user?.firstname} ${user?.lastname}`}
       description={`${user?.playlistsCount} total public playlists`}
       roundImage
-      image="/profile.jpg"
+      image={`https://picsum.photos/400?random=${json.id}`}
     >
       <Box color="white" paddingX="40px">
         <Box marginBottom="40px">

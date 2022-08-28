@@ -1,4 +1,4 @@
-import { Box, Flex, Input, Button } from "@chakra-ui/react";
+import { Box, Flex, Input, Button, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import auth from "../lib/mutation";
 import { FC, useState } from "react";
@@ -39,17 +39,36 @@ const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
         height="calc(100vh - 100px)"
         minW="200px"
       >
-        <Box bg="gray.900" padding="50px" borderRadius="6px" minW="500px">
+        <Box
+          bg="gray.900"
+          padding="50px"
+          borderRadius="6px"
+          minW="200px"
+          width="600px"
+        >
+          <Box marginBottom="30px" justifyContent="center" textAlign="center">
+            <Text
+              size="lg"
+              letterSpacing="1px"
+              fontWeight="semibold"
+              textTransform="capitalize"
+              fontSize="25px"
+            >
+              {mode}
+            </Text>
+          </Box>
           <form onSubmit={submitHandler}>
-            <Box paddingY="10px" minW="500px">
+            <Box paddingY="10px" width="100%">
               <Input
+                id="email"
                 type="email"
                 placeholder="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Box>
-            <Box paddingY="10px" minW="200px">
+            <Box paddingY="10px" width="100%">
               <Input
+                id="password"
                 type="password"
                 placeholder="password"
                 onChange={(e) => setPassword(e.target.value)}
