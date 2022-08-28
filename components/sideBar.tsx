@@ -60,8 +60,8 @@ const SideBar = () => {
       paddingX="5px"
     >
       <Box paddingY="5px" height="100%">
-        <Box width="120px" marginBottom="20px" paddingX="5px">
-          <Image src="/logo.svg" width={120} height={60} />
+        <Box width="120px">
+          <Image src="/logo.svg" width={120} height={120} />
         </Box>
         <Box marginBottom="20px">
           <List spacing={2}>
