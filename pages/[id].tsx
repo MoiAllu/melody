@@ -1,6 +1,6 @@
-import ridirect from "../components/redirect";
+import Ridirect from "../components/redirect";
 
 const home = () => {
-  ridirect();
+  Ridirect();
 };
 export default home;
