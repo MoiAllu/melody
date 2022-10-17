@@ -8,6 +8,7 @@ import { useMe } from "../lib/hooks";
 const Home = ({ artists }) => {
   const { json } = artists;
   const { user } = useMe();
+  console.log(user);
   return (
     <GradientLayout
       color="yellow"
